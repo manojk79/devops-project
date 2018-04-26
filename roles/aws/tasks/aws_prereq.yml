@@ -1,3 +1,5 @@
+
+# this file is to install prerequistes needed to spin up ec2 on Aws
 ---
 - easy_install:
     name: pip
