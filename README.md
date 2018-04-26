@@ -16,7 +16,7 @@ This project will create
 
 4)security group with reuired ports
 
-5) creates ec2 instance and installs httpd and webpage securly.
+5)creates ec2 instance and installs httpd and webpage securly.
  
 
 
