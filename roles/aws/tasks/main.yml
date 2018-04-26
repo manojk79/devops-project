@@ -1,4 +1,4 @@
-#Runs all the below roles to spin up ec2 with secured webpage
+#Runs all the below tasks to spin up ec2 with secured webpage
 ---
 - include: aws_prereq.yml
 - include: aws_vpc.yml
