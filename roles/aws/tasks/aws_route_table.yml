@@ -1,3 +1,5 @@
+
+#TThis file is used for setting up subnet route table
 - name:               Set up public subnet route table
   ec2_vpc_route_table:
     state: present
