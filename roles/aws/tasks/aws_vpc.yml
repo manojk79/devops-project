@@ -1,3 +1,4 @@
+# This file helps to create vpc in the Aws environment
 - name:               Creating {{ aws_project_name }} VPC
   ec2_vpc_net:
     name:             "{{ aws_project_name }}"
