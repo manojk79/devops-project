@@ -1,3 +1,5 @@
+
+# this file is used to create public subet on AWs
 - name:               Create Public Subnet
   ec2_vpc_subnet:
     state:            "present"
