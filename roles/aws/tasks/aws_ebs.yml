@@ -1,3 +1,4 @@
+# This files creates the ebs volume  and attaches to EC2 instance
 - name: Creating Volume
   ec2_vol:
     ec2_access_key: "{{ aws_access_key }}"
