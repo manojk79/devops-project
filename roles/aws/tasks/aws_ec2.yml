@@ -1,3 +1,5 @@
+# Create eC2 instances and install secured web server with hello world page"
+
 - name: Launch instance
   ec2:
     ec2_access_key: "{{ aws_access_key }}"
