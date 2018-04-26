@@ -1,0 +1,32 @@
+- name:               Create AWS Security Group
+  ec2_group:
+    name:             "{{ aws_project_name }} Security Group"
+    description:      "{{ aws_project_name }} Security Group"
+    vpc_id:           "{{ aws_vpc_id }}"
+    region:           "{{ aws_region }}"
+    aws_access_key:   "{{ aws_access_key }}"
+    aws_secret_key:   "{{ aws_secret_key }}"
+    state: present
+    rules:
+      - proto:        "tcp"
+        from_port:    "22"
+        to_port:      "22"
+        cidr_ip:      "0.0.0.0/0"
+      - proto:        "tcp"
+        from_port:    "443"
+        to_port:      "443"
+        cidr_ip:      "0.0.0.0/0"
+    rules_egress:
+      - proto: "tcp"
+        from_port: "80"
+        to_port: "80"
+        cidr_ip: 0.0.0.0/0
+      - proto: tcp
+        from_port: 443
+        to_port: 443
+        cidr_ip: 0.0.0.0/0
+  register: "aws_sg"
+
+- name: Set SG ID in variable
+  set_fact:
+    aws_sg_id: "{{ aws_sg.group_id }}"

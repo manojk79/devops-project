@@ -1,0 +1,13 @@
+- name:               Creating {{ aws_project_name }} VPC
+  ec2_vpc_net:
+    name:             "{{ aws_project_name }}"
+    cidr_block:       "10.0.0.0/16"
+    region:           "{{ aws_region }}"
+    aws_access_key:   "{{ aws_access_key }}"
+    aws_secret_key:   "{{ aws_secret_key }}"
+    state:            "present"
+  register: "aws_vpc"
+
+- name: Set VPC ID in variable
+  set_fact:
+    aws_vpc_id: "{{ aws_vpc.vpc.id }}"

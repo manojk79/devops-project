@@ -1,0 +1,30 @@
+- name:               Create Public Subnet
+  ec2_vpc_subnet:
+    state:            "present"
+    vpc_id:           "{{ aws_vpc_id }}"
+    cidr:             "10.0.0.0/24"
+    az:               "{{ aws_region }}a"
+    region:           "{{ aws_region }}"
+    aws_access_key:   "{{ aws_access_key }}"
+    aws_secret_key:   "{{ aws_secret_key }}"
+  register: "aws_public_subnet"
+
+- name:               Set Public Subnet ID in variable
+  set_fact:
+    aws_public_subnet_id: "{{ aws_public_subnet.subnet.id }}"
+
+
+- name:               Create Private Subnet
+  ec2_vpc_subnet:
+    state:            "present"
+    vpc_id:           "{{ aws_vpc_id }}"
+    cidr:             "10.0.0.0/24"
+    az:               "{{ aws_region }}a"
+    region:           "{{ aws_region }}"
+    aws_access_key:   "{{ aws_access_key }}"
+    aws_secret_key:   "{{ aws_secret_key }}"
+  register: aws_private_subnet
+
+- name:               Set Private Subnet ID in variable
+  set_fact:
+    private_subnet_id: "{{ aws_private_subnet.subnet.id }}"

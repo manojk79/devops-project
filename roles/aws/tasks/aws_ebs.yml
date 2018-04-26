@@ -1,0 +1,15 @@
+- name: Creating Volume
+  ec2_vol:
+    ec2_access_key: "{{ aws_access_key }}"
+    ec2_secret_key: "{{ aws_secret_key }}"
+    instance: "{{ item.id }}"
+    device_name: "/dev/sda1"
+    region: "{{ aws_region }}"
+    volume_type: "gp2"
+    volume_size: "5"
+    zone: "{{aws_region}}-a"
+    name: "{{aws_project_name}}"
+    delete_on_termination: "yes"
+    state: present
+  with_items:
+    - "{{ aws_ec2.instances }}"

@@ -1,0 +1,6 @@
+---
+aws_access_key: "XXXXX"
+aws_secret_key: "XXXXX"
+aws_region: "us-east-2"
+aws_project_name: "testing123"
+aws_image: "ami-976152f2"

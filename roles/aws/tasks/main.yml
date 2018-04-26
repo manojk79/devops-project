@@ -1,0 +1,9 @@
+---
+- include: aws_prereq.yml
+- include: aws_vpc.yml
+- include: aws_subnets.yml
+- include: aws_igw.yml
+- include: aws_route_table.yml
+- include: aws_sg.yml
+- include: aws_ec2.yml
+#- include: aws_ebs.yml

@@ -1,0 +1,12 @@
+---
+- easy_install:
+    name: pip
+    state: latest
+
+- pip:
+    name: "{{ item }}"
+  with_items:
+    - boto
+    - botocore
+    - boto3
+

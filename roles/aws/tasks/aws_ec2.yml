@@ -1,0 +1,18 @@
+- name: Launch instance
+  ec2:
+    ec2_access_key: "{{ aws_access_key }}"
+    ec2_secret_key: "{{ aws_secret_key }}"
+    keypair: "test123"
+    instance_type: "t2.micro"
+    user_data: "{{ lookup('file', 'user_data.sh') }}"
+    image: "{{ aws_image }}"
+    wait: true
+    id: "{{ 1000 |random}}"
+    group: "{{ aws_project_name }} Security Group"
+    region: "{{ aws_region }}"
+    vpc_subnet_id: "{{ aws_public_subnet_id }}"
+    assign_public_ip: yes
+    count: "1"
+  register: aws_ec2
+
+
