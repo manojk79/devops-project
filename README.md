@@ -7,10 +7,15 @@ Ansible installed
 Aws credentials 
 
 This project will create 
+
 1)vpc 
+
 2)Internet Gatewat
+
 3)Roputing table
+
 4)security group with reuired ports
+
 5) creates ec2 instance and installs httpd and webpage securly.
  
 
