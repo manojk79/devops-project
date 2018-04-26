@@ -1,3 +1,4 @@
+# This file is used for creating security group with ports 22, 443 open"
 - name:               Create AWS Security Group
   ec2_group:
     name:             "{{ aws_project_name }} Security Group"
