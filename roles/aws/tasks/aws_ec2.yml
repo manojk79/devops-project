@@ -16,5 +16,13 @@
     assign_public_ip: yes
     count: "1"
   register: aws_ec2
+  
+- name: html file to the destination file
+  copy:
+    src: html
+    dest: /var/www/html/index.html
+    owner: root
+    group: root
+    mode: 0644
 
 
